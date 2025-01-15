@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,5 +23,21 @@ namespace Home_14
             }
             return result;
         }
+
+        public static T[] TakeSome<T>(this T[] array, int start, int end)
+        {
+            if (array == null) { throw new ArgumentException(); }
+
+            T[] result = new T[end - start + 1];
+
+            for (int i = start; i <= end; i++)
+            {
+                result[i - start] = array[i];
+            }
+            return result;
+        }
+
+
+
     }
 }
