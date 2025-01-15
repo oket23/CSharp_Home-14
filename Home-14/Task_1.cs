@@ -30,14 +30,33 @@ namespace Home_14
             Hide();
         }
 
-        private void exitLb_MouseEnter(object sender, EventArgs e)
+        private void exitLb_MouseHover(object sender, EventArgs e)
+        {
+            exitLb.ForeColor = Color.White;
+        }
+
+        private void exitLb_MouseLeave(object sender, EventArgs e)
         {
             exitLb.ForeColor = Color.Green;
         }
 
-        private void exitLb_MouseHover(object sender, EventArgs e)
+        private void calculateLb_MouseHover(object sender, EventArgs e)
         {
-            exitLb.ForeColor = Color.White;
+            calculateLb.ForeColor = Color.White;
+        }
+
+        private void calculateLb_MouseLeave(object sender, EventArgs e)
+        {
+            calculateLb.ForeColor = Color.Green;
+        }
+
+        private void calculateLb_Click(object sender, EventArgs e)
+        {
+            int number = int.Parse(numberTB.Text);
+            int power = int.Parse(powerTb.Text);
+
+            int result = number.ToPow(power);
+            resultLb.Text = result.ToString();
         }
     }
 }
